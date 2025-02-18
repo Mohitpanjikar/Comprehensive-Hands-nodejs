@@ -1,0 +1,6 @@
+Semantic Versioning - Major.minor.patch 
+	•	Major: Breaking changes.
+	•	Minor: New features, backward-compatible.
+	•	Patch: Bug fixes, backward-compatible.
+	•	^: Allows minor and patch updates, not major.
+	•	~: Allows only patch updates within the same minor version.
