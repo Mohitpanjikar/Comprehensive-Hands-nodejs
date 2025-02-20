@@ -1,17 +1,21 @@
 const express = require('express');
 //importing the middleware from another file - 
 const myMiddleware1 = require('./middleware/middleware1');
+const morgan = require('morgan');
 
 const app = express();
 
-//custom middleware -
+// custom middleware 1
 app.use(myMiddleware1);
 
+// custom middleware 2
 app.use(function(req, res, next) {
     console.log("This is a custom middleware 2");
     next();
 });
 
+// morgan middleware (pass the format as a string, e.g., 'combined', 'dev', etc.)
+app.use(morgan('dev'));
 
 let courses = [
     {id: 1, name: 'javascript'},
