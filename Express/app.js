@@ -1,5 +1,17 @@
 const express = require('express');
+//importing the middleware from another file - 
+const myMiddleware1 = require('./middleware/middleware1');
+
 const app = express();
+
+//custom middleware -
+app.use(myMiddleware1);
+
+app.use(function(req, res, next) {
+    console.log("This is a custom middleware 2");
+    next();
+});
+
 
 let courses = [
     {id: 1, name: 'javascript'},
@@ -7,7 +19,7 @@ let courses = [
     {id: 3, name: 'java'}
 ];
 
-// Middleware to parse JSON bodies
+// Middleware to parse JSON bodies - built-in middleware
 app.use(express.json());
 
 // GET, PUT, POST, DELETE
