@@ -11,9 +11,9 @@ function cb1(err, data) {
         return;
     }
     console.log(data.toString());
-    console.log("Reading file asynchronously Done");
+    console.log("Reading file asynchronously Done 1");
 
-    fs.readFile('f2.txt', cb2);
+    fs.readFile('f2.txt', cb2); //what will happend now - asynchronous code will run line by line
 } 
 function cb2(err, data) {
     if (err) {
@@ -22,5 +22,5 @@ function cb2(err, data) {
         return;
     }
     console.log(data.toString());
-    console.log("Reading file asynchronously Done");
+    console.log("Reading file asynchronously Done 2");
 } 
